@@ -11,11 +11,15 @@ public class projectoJava{
         ArrayList<String> nombresProductos = new ArrayList<>();
         ArrayList<Integer> cantidadesProductos = new ArrayList<>();
 
+        final double IVA = 0.12;
+        double Precio = 100;
+        double PrecioConIVA = Precio * (1 + IVA);
+
         int opcion = 0;
 
         while (opcion != 5) {
             System.out.println("Menú de Inventario");
-            System.out.print("Seleccione una opción: ");
+            System.out.println("Seleccione una opción: ");
             System.out.println("1) Agregar producto");
             System.out.println("2) Listar productos");
             System.out.println("3) Actualizar cantidad de un producto");
@@ -29,7 +33,7 @@ public class projectoJava{
                 String nombre = scanner.nextLine();
                 System.out.print("Ingrese la cantidad del producto: ");
                 int cantidad = scanner.nextInt();
-                scanner.nextLine(); // Consumir la nueva línea
+                scanner.nextLine();
 
                 nombresProductos.add(nombre);
                 cantidadesProductos.add(cantidad);
@@ -53,7 +57,7 @@ public class projectoJava{
                 if (indexActualizar != -1) {
                     System.out.print("Ingrese la nueva cantidad: ");
                     int nuevaCantidad = scanner.nextInt();
-                    scanner.nextLine(); // Consumir la nueva línea
+                    scanner.nextLine();
 
                     cantidadesProductos.set(indexActualizar, nuevaCantidad);
                     System.out.println("Cantidad actualizada correctamente.");
